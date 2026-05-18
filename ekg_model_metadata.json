@@ -1,0 +1,147 @@
+{
+  "config": {
+    "data_dir": "/Users/vasarep./Desktop/klasifikatorius/dataset",
+    "channel": 0,
+    "before": 90,
+    "after": 90,
+    "normal_symbols": [
+      "N",
+      "L",
+      "R",
+      "e",
+      "j",
+      "/"
+    ],
+    "ignore_symbols": [
+      "+",
+      "~",
+      "|",
+      "[",
+      "]",
+      "!",
+      "\"",
+      "x"
+    ],
+    "record_level_threshold": 0.05,
+    "test_size": 0.25,
+    "random_state": 42,
+    "model_output_path": "/Users/vasarep./Desktop/klasifikatorius/ekg_ensemble_model.joblib",
+    "metadata_output_path": "/Users/vasarep./Desktop/klasifikatorius/ekg_model_metadata.json",
+    "output_dir": "/Users/vasarep./Desktop/klasifikatorius",
+    "use_smote": true
+  },
+  "metrics": {
+    "logistic_regression": {
+      "balanced_accuracy": 0.7312332881138669,
+      "f1": 0.3156349400538292,
+      "precision": 0.20692974013474494,
+      "recall": 0.6649484536082474,
+      "roc_auc": 0.8402648737633786
+    },
+    "random_forest": {
+      "balanced_accuracy": 0.7446379677164254,
+      "f1": 0.41200790940140214,
+      "precision": 0.31631244824730886,
+      "recall": 0.5907216494845361,
+      "roc_auc": 0.8696050453271318
+    },
+    "xgboost_default": {
+      "balanced_accuracy": 0.7743121764496512,
+      "f1": 0.3837307152875175,
+      "precision": 0.2635838150289017,
+      "recall": 0.7051546391752578,
+      "roc_auc": 0.8676338924756243
+    },
+    "xgboost_tuned": {
+      "balanced_accuracy": 0.749080315852273,
+      "f1": 0.472546476437527,
+      "precision": 0.4069247952345495,
+      "recall": 0.5634020618556701,
+      "roc_auc": 0.8676338924756243
+    },
+    "ensemble_default": {
+      "balanced_accuracy": 0.7687226324062709,
+      "f1": 0.3900855709648864,
+      "precision": 0.2732534105002067,
+      "recall": 0.6814432989690722,
+      "roc_auc": 0.8862245925498078
+    },
+    "ensemble_tuned": {
+      "balanced_accuracy": 0.720080219164525,
+      "f1": 0.45042095416276895,
+      "precision": 0.4122431506849315,
+      "recall": 0.4963917525773196,
+      "roc_auc": 0.8862245925498078
+    }
+  },
+  "training_info": {
+    "X_train_shape": [
+      83111,
+      5
+    ],
+    "X_test_shape": [
+      26357,
+      5
+    ],
+    "train_records": [
+      "100",
+      "101",
+      "102",
+      "105",
+      "106",
+      "107",
+      "109",
+      "111",
+      "112",
+      "114",
+      "115",
+      "116",
+      "117",
+      "118",
+      "119",
+      "122",
+      "123",
+      "124",
+      "200",
+      "207",
+      "208",
+      "209",
+      "210",
+      "212",
+      "213",
+      "214",
+      "215",
+      "217",
+      "220",
+      "221",
+      "223",
+      "228",
+      "231",
+      "232",
+      "233",
+      "234"
+    ],
+    "test_records": [
+      "103",
+      "104",
+      "108",
+      "113",
+      "121",
+      "201",
+      "202",
+      "203",
+      "205",
+      "219",
+      "222",
+      "230"
+    ],
+    "dataset_size": 109468,
+    "normal_count": 97635,
+    "abnormal_count": 11833,
+    "smote_used": true,
+    "xgboost_used": true,
+    "scale_pos_weight": 7.400990599413727,
+    "xgb_best_threshold_f1": 0.8999999999999996,
+    "ensemble_best_threshold_f1": 0.7899999999999997
+  }
+}
