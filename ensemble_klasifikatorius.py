@@ -1,16 +1,3 @@
-# ============================================================
-# EKG aritmijos klasifikavimas su dviem klasifikatoriais
-# ir jų sujungimu į vieną 
-#
-# Naudojami modeliai:
-# 1) Logistic Regression
-# 2) Random Forest
-# 3) Soft Voting Ensemble
-#
-# Tinka MIT-BIH formato failams:
-# .dat + .hea + .atr
-# ============================================================
-
 import os
 import glob
 import json
@@ -46,11 +33,6 @@ from sklearn.metrics import (
 
 warnings.filterwarnings("ignore")
 
-
-# ============================================================
-# 1. KONFIGŪRACIJA
-# ============================================================
-
 @dataclass
 class Config:
     data_dir: str = "/mnt/data"
@@ -68,11 +50,6 @@ class Config:
     model_output_path: str = "ekg_ensemble_model.joblib"
     metadata_output_path: str = "ekg_model_metadata.json"
     output_dir: str = "."
-
-
-# ============================================================
-# 2. PAGALBINĖS FUNKCIJOS FAILAMS
-# ============================================================
 
 def find_complete_records(data_dir: str) -> List[str]:
     records = []
@@ -95,11 +72,6 @@ def print_record_summary(records: List[str]) -> None:
     print(", ".join(records))
     print(f"Iš viso pilnų įrašų: {len(records)}")
     print("=" * 60)
-
-
-# ============================================================
-# 3. POŽYMIŲ IŠTRAUKIMO KLASĖ
-# ============================================================
 
 class ECGFeatureExtractor(BaseEstimator, TransformerMixin):
     def fit(self, X, y=None):
@@ -164,10 +136,6 @@ class ECGFeatureExtractor(BaseEstimator, TransformerMixin):
             zero_crossings, width_proxy, peak_index, trough_index
         ]
 
-
-# ============================================================
-# 4. DUOMENŲ ĮKĖLIMAS IR DŪŽIŲ IŠTRAUKIMAS
-# ============================================================
 
 def zscore_normalize(signal: np.ndarray) -> np.ndarray:
     return (signal - np.mean(signal)) / (np.std(signal) + 1e-8)
@@ -279,11 +247,6 @@ def build_dataset(config: Config) -> Tuple[np.ndarray, np.ndarray, np.ndarray, p
 
     return X, y, groups, df_meta
 
-
-# ============================================================
-# 5. MODELIO KŪRIMAS
-# ============================================================
-
 def build_models(config: Config):
     logistic_pipeline = Pipeline(steps=[
         ("feature_extractor", ECGFeatureExtractor()),
@@ -323,10 +286,6 @@ def build_models(config: Config):
     return logistic_pipeline, rf_pipeline, ensemble
 
 
-# ============================================================
-# 6. VERTINIMO FUNKCIJOS
-# ============================================================
-
 def evaluate_binary_classifier(model, X_test, y_test, title: str = "Modelis") -> Dict[str, float]:
     y_pred = model.predict(X_test)
 
@@ -360,10 +319,6 @@ def evaluate_binary_classifier(model, X_test, y_test, title: str = "Modelis") ->
 
     return metrics
 
-
-# ============================================================
-# 6.1 GRAFIKŲ FUNKCIJOS
-# ============================================================
 
 def plot_class_distribution(y: np.ndarray, output_path: str):
     unique, counts = np.unique(y, return_counts=True)
@@ -438,12 +393,7 @@ def plot_metrics_comparison(all_metrics: Dict[str, Dict[str, float]], output_pat
     plt.savefig(output_path, dpi=300)
     plt.close()
     print(f"Grafikas išsaugotas: {output_path}")
-
-
-# ============================================================
-# 7. MOKYMAS
-# ============================================================
-
+    
 def split_train_test_by_record(
     X: np.ndarray,
     y: np.ndarray,
@@ -516,10 +466,6 @@ def train_and_evaluate(config: Config):
     return trained_models, all_metrics, training_info, X, y, X_test, y_test
 
 
-# ============================================================
-# 8. PROGNOZĖ VIENAM ĮRAŠUI
-# ============================================================
-
 def predict_record_beats(record_name: str, model, config: Config) -> pd.DataFrame:
     X_rec, y_true, symbols, r_locs = extract_beats_from_record(record_name, config)
 
@@ -573,10 +519,6 @@ def predict_record_level(record_name: str, model, config: Config) -> Dict:
     }
 
 
-# ============================================================
-# 9. IŠSAUGOJIMAS
-# ============================================================
-
 def save_model_and_metadata(model, metrics: Dict, training_info: Dict, config: Config):
     joblib.dump(model, config.model_output_path)
 
@@ -597,9 +539,6 @@ def load_model(model_path: str):
     return joblib.load(model_path)
 
 
-# ============================================================
-# 10. MAIN
-# ============================================================
 
 def main():
     script_dir = os.path.dirname(os.path.abspath(__file__))
