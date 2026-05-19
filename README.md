@@ -31,14 +31,6 @@ Taikant signalų apdorojimo ir mašininio mokymosi metodus sukurti modelį, gali
 
 ---
 
-# Darbo uždaviniai:
-1. Išanalizuoti pagrindines medicininių signalų rūšis ir jų savybes.
-2. Apžvelgti biologinių signalų apdorojimo metodus.
-3. Aptarti mašininio mokymosi ir giliojo mokymosi metodus, taikomus laiko eilučių analizei.
-4. Pristatyti sukurtą EKG signalų klasifikavimo modelį.
-5. Įvertinti modelio veikimo tikslumą ir praktinį pritaikomumą diagnostikoje.
----
-
 # Duomenų rinkinys
 
 Naudotas **MIT-BIH Arrhythmia Database** duomenų rinkinys.
