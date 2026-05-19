@@ -1,79 +1,67 @@
-<h1 align="left">
-ECG Arrhythmia Classification Using Ensemble Methods
+<h1 align="center">
+EKG aritmijų klasifikavimas naudojant ansamblinius metodus
 </h1>
 
-<p align="left">
-This is a machine learning project for ECG signal analysis and arrhythmia detection. The project uses the MIT-BIH Arrhythmia Database.
+<p align="center">
+Mašininio mokymosi projektas EKG signalų analizei ir aritmijų aptikimui naudojant MIT-BIH Arrhythmia Database duomenų rinkinį.
 </p>
 
 ---
 
-# Project Description
+# Projekto aprašymas
 
-This project creates a system that can classify ECG signals. The system separates normal heartbeats from arrhythmic heartbeats.
+Šiame projekte sukurta sistema, kuri automatiškai klasifikuoja EKG širdies dūžius į dvi klases:
 
-Several machine learning methods were used:
+- normalius dūžius,
+- aritminius dūžius.
 
-- Logistic Regression
-- Random Forest
-- Soft Voting Ensemble
+Modeliui kurti naudoti šie metodai:
 
-The SMOTE method was also used to reduce the class imbalance problem.
+- Logistic Regression,
+- Random Forest,
+- Soft Voting Ensemble.
 
----
-
-# Thesis Aim and Tasks
-
-The aim of this thesis is to create a model that can classify electrocardiogram signals using signal processing and machine learning methods. The model should identify whether the heart rhythm follows normal patterns.
-
-To achieve this aim, the following tasks are set:
-
-1. Analyse the main types of medical signals and their features.
-2. Review biological signal processing methods.
-3. Discuss machine learning and deep learning methods used for time series analysis.
-4. Present the developed ECG signal classification model.
-5. Evaluate the model’s accuracy and its possible use in diagnostics.
+Klasių disbalanso problemai mažinti pritaikytas SMOTE metodas.
 
 ---
 
-# Methods Used
+# Projekto tikslas
 
-## Logistic Regression
-
-Logistic Regression was used as the basic model.
-
-Main features:
-
-- it trains quickly,
-- the results are easy to understand,
-- it works well with standardized features.
+Taikant signalų apdorojimo ir mašininio mokymosi metodus sukurti modelį, galintį klasifikuoti elektrokardiogramos signalus ir nustatyti, ar širdies ritmas atitinka nustatytas normas.
 
 ---
 
-## Random Forest
+# Duomenų rinkinys
 
-Random Forest is a method that uses many decision trees.
+Naudotas **MIT-BIH Arrhythmia Database** duomenų rinkinys.
 
-Main features:
+Naudoti failų tipai:
 
-- it can learn nonlinear relationships,
-- it is more resistant to noise,
-- it works well with complex signal features.
-
+```text
+.dat  -> EKG signalas
+.hea  -> metaduomenys
+.atr  -> anotacijos
+project/
+│
+├── dataset/
+│   ├── 100.dat
+│   ├── 100.hea
+│   ├── 100.atr
+│   └── ...
+│
+├── ensemble_klasifikatorius.py
+├── README.md
+├── ekg_model_metadata.json
+├── ...
+│
+├── images/
+│   ├── prt2_roc_curves.png
+│   ├── prt2_metrics_comparison.png
+│   └── ...
 ---
-
-## Soft Voting Ensemble
-
-The final model was built using an ensemble method.
-
-Ensemble structure:
-
-```python
-VotingClassifier(
-    estimators=[
-        ("logreg", logistic_model),
-        ("rf", rf_model)
-    ],
-    voting="soft",
-    weights=[1.0, 3.0]
-)
+# Naudotos bibliotekos - NumPy - Pandas - Scikit-learn - imbalanced-learn - WFDB - Matplotlib - Joblib ---
+# Projekto paskirtis
+Projektas skirtas: - medicininių signalų analizei, - mašininio mokymosi tyrimams, - EKG klasifikavimo demonstracijai,
+---
+# Autorė Vasarė Pratuzaitė
+Vilniaus universiteto Matematikos ir informatikos fakultetas
