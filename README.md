@@ -1,4 +1,4 @@
-<h1 
+<h1 align="left">
 ECG Arrhythmia Classification Using Ensemble Methods
 </h1>
 
