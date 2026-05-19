@@ -1,5 +1,5 @@
 <h1 align="left">
-EKG aritmijų klasifikavimas naudojant ansamblinius metodus
+EKG aritmijų klasifikavimas
 </h1>
 
 <p align="left">
