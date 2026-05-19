@@ -1,8 +1,8 @@
-<h1 align="center">
+<h1 align="left">
 EKG aritmijų klasifikavimas naudojant ansamblinius metodus
 </h1>
 
-<p align="center">
+<p align="left">
 Mašininio mokymosi projektas EKG signalų analizei ir aritmijų aptikimui naudojant MIT-BIH Arrhythmia Database duomenų rinkinį.
 </p>
 
@@ -31,7 +31,6 @@ Taikant signalų apdorojimo ir mašininio mokymosi metodus sukurti modelį, gali
 
 ---
 
----
 # Darbo uždaviniai:
 1. Išanalizuoti pagrindines medicininių signalų rūšis ir jų savybes.
 2. Apžvelgti biologinių signalų apdorojimo metodus.
