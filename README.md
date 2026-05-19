@@ -59,18 +59,6 @@ project/
 
 ---
 
-# Naudotos bibliotekos
-
-- NumPy
-- Pandas
-- Scikit-learn
-- imbalanced-learn
-- WFDB
-- Matplotlib
-- Joblib
-
----
-
 # Projekto paskirtis
 
 Projektas skirtas:
