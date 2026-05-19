@@ -25,7 +25,7 @@ Klasių disbalanso problemai mažinti pritaikytas SMOTE metodas.
 
 ---
 
-# Projekto tikslas
+# Darbo tikslas
 
 Taikant signalų apdorojimo ir mašininio mokymosi metodus sukurti modelį, galintį klasifikuoti elektrokardiogramos signalus ir nustatyti, ar širdies ritmas atitinka nustatytas normas.
 
@@ -59,9 +59,9 @@ project/
 
 ---
 
-# Projekto paskirtis
+# Darbo paskirtis
 
-Projektas skirtas:
+Darbo skirtas:
 
 - medicininių signalų analizei,
 - mašininio mokymosi tyrimams,
