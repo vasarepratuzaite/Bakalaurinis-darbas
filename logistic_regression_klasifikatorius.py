@@ -1,8 +1,3 @@
-# ============================================================
-# EKG aritmijos klasifikavimas naudojant Logistic Regression
-# 
-# ============================================================
-
 import os
 import glob
 import json
