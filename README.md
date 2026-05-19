@@ -84,5 +84,6 @@ Projektas skirtas:
 # Autorė
 
 Vasarė Pratuzaitė
+
 Vilniaus universiteto Matematikos ir informatikos fakultetas
 
