@@ -10,7 +10,7 @@ Mašininio mokymosi projektas EKG signalų analizei ir aritmijų aptikimui naudo
 
 # Projekto aprašymas
 
-Šiame projekte sukurta sistema, kuri automatiškai klasifikuoja EKG širdies dūžius į dvi klases:
+Šiame projekte sukurtas klasifikatorius, kuris automatiškai skirsto EKG širdies dūžius į dvi klases:
 
 - normalius dūžius,
 - aritminius dūžius.
