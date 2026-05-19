@@ -38,9 +38,6 @@ Naudotas **MIT-BIH Arrhythmia Database** duomenų rinkinys.
 Naudoti failų tipai:
 
 ```text
-.dat  -> EKG signalas
-.hea  -> metaduomenys
-.atr  -> anotacijos
 project/
 │
 ├── dataset/
@@ -58,10 +55,35 @@ project/
 │   ├── prt2_roc_curves.png
 │   ├── prt2_metrics_comparison.png
 │   └── ...
+```
+
 ---
-# Naudotos bibliotekos - NumPy - Pandas - Scikit-learn - imbalanced-learn - WFDB - Matplotlib - Joblib ---
+
+# Naudotos bibliotekos
+
+- NumPy
+- Pandas
+- Scikit-learn
+- imbalanced-learn
+- WFDB
+- Matplotlib
+- Joblib
+
+---
+
 # Projekto paskirtis
-Projektas skirtas: - medicininių signalų analizei, - mašininio mokymosi tyrimams, - EKG klasifikavimo demonstracijai,
+
+Projektas skirtas:
+
+- medicininių signalų analizei,
+- mašininio mokymosi tyrimams,
+- EKG klasifikavimo demonstracijai.
+
 ---
-# Autorė Vasarė Pratuzaitė
+
+# Autorė
+
+Vasarė Pratuzaitė
+Vilniaus universiteto Matematikos ir informatikos fakultetas
+
 Vilniaus universiteto Matematikos ir informatikos fakultetas
