@@ -2,7 +2,7 @@
 ECG Arrhythmia Classification Using Ensemble Methods
 </h1>
 
-<p align="center">
+<p align="left">
 A machine learning project for ECG signal analysis and arrhythmia detection using the MIT-BIH Arrhythmia Database.
 </p>
 
