@@ -61,7 +61,7 @@ project/
 
 # Darbo paskirtis
 
-Darbo skirtas:
+Darbas buvo skirtas:
 
 - medicininių signalų analizei,
 - mašininio mokymosi tyrimams,
