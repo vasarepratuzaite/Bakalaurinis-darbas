@@ -22,15 +22,17 @@ The SMOTE method was also used to reduce the class imbalance problem.
 
 ---
 
-# Project Goal
+# Thesis Aim and Tasks
 
-The goal of this project is to create a classification system that can:
+The aim of this thesis is to create a model that can classify electrocardiogram signals using signal processing and machine learning methods. The model should identify whether the heart rhythm follows normal patterns.
 
-- process ECG signals automatically,
-- extract heartbeats from MIT-BIH records,
-- classify heartbeats as normal or arrhythmic,
-- reduce the class imbalance problem,
-- show the results using graphs.
+To achieve this aim, the following tasks are set:
+
+1. Analyse the main types of medical signals and their features.
+2. Review biological signal processing methods.
+3. Discuss machine learning and deep learning methods used for time series analysis.
+4. Present the developed ECG signal classification model.
+5. Evaluate the model’s accuracy and its possible use in diagnostics.
 
 ---
 
